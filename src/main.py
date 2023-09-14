@@ -34,12 +34,24 @@ class MyChecker(ToTChecker):
 ######## There are multiple files within the data directory - note, files came mostly from http://www.sudoku-download.net/sudoku_8x8.php
 datadir = 'data/'
 artifactsdir = 'artifacts/'
-savefile = 'output.json'
+savefile = modeltype+'_output.json'
+
+##difficulty map needs to be expanded to allow more children thoughts
+difficulty_map = {'base':2,
+                    'easy': 2,
+                    'medium': 2,
+                    'hard': 3,
+                    'expert':4}
+
+##saved output
 out_dict = {}
+
 for i in os.listdir('data/'):
     
     filename = i
     tile_size = filename.split('.')[0].split('_')[-1]
+    
+    children_thoughts = difficulty_map[filename.split('.')[0].split('_')[0]]*int(tile_size)
     
     sudoku_data = get_sudoku_data('data/'+i)
     sudoku_puzzle = sudoku_data['sudoku_puzzle']
@@ -86,8 +98,8 @@ for i in os.listdir('data/'):
 
     for j in range(1, 11):
         k = 5*j
-        c = 5
-        tot_chain = ToTChain(llm=llm, checker=MyChecker(), k=50, c=c, verbose=True, verbose_llm=False)
+        c = children_thoughts
+        tot_chain = ToTChain(llm=llm, checker=MyChecker(), k=50, c=children_thoughts, verbose=True, verbose_llm=False)
         solution = tot_chain.run(problem_description=problem_description)
         if solution == sudoku_solution:
             break
