@@ -50,8 +50,8 @@ for i in os.listdir('data/'):
     
     filename = i
     tile_size = filename.split('.')[0].split('_')[-1]
-    
-    children_thoughts = difficulty_map[filename.split('.')[0].split('_')[0]]*int(tile_size)
+    grid = tile_size.split('x')[0]
+    children_thoughts = difficulty_map[filename.split('.')[0].split('_')[0]]*int(grid)
     
     sudoku_data = get_sudoku_data('data/'+i)
     sudoku_puzzle = sudoku_data['sudoku_puzzle']
@@ -63,7 +63,7 @@ for i in os.listdir('data/'):
     - This is a {tile_size} Sudoku puzzle.
     - The * represents a cell to be filled.
     - The | character separates rows.
-    - At each step, replace one or more * with digits 1-{tile_size.split('x')[0]}.
+    - At each step, replace one or more * with digits 1:{grid}.
     - There must be no duplicate digits in any row, column or subgrid.
     - Keep the known digits from previous valid thoughts in place.
     - Each thought can be a partial or the final solution.
