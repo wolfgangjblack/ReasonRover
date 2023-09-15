@@ -4,7 +4,7 @@ Utilize Tree-of-thought to explore complex problem solving in Large Language Mod
 Data Modified: 9/14/23
 Author: Wolfgang Black
 
-This repositiory contains code exploring the [Tree-of-Thought method](https://arxiv.org/pdf/2305.08291.pdf). In this paper, 
+This repositiory contains code exploring the [Tree-of-Thought method](https://arxiv.org/pdf/2305.08291.pdf) (ToT). In this paper, 
 the authors use the Tree-of-Thought to solve sudoku problems. To explore this, in this repo there are a series of different sudoku problems
 increasing the grid size of the problems and the difficulty of the problems found in the 9x9 grid. This determines whether the tree-of-thought method as implemented in [langchain]() can solve this range of problems. The parameters k, c, and modeltype are all explored. These parameters are explain before
 
@@ -28,8 +28,49 @@ To run this code:
 3. type ```'python main.py```
 4. if the code runs to completion, results can be found in ```./src/artifacts```
 
-## Results
+## Experiment
+### 4x4 with different starting conditions
+First to understand how this code works, we verified that the ToT method could solve a 4x4 problem presented in the paper. This problem was of the form
 
-<b>WIP</b>
+Problem                     Solution
+```
+3, *, *, 2                  3, 4, 1, 2
+1, *, 3, *                  1, 2, 3, 4
+*, 1, *, 3      ->          2, 1, 4, 3
+4, *, *, 1                  4, 3, 2, 1
+```
+
+The ToT method, implemented with MyChecker() class was able to solve this with k = 10, c = 8. However, the form is relatively easy and straight forward. To understand how we can use this same form to explore k we changed the number of initial populated parameters and the populated pattern.
+
+
+Example Initial Conditions
+```
+easy        base        medium        hard
+
+
+```
+#### Results
+1. Did it ever generate a false answer, or fail to solve?
+    - for the base 4x4 problem, this checker never failed to solve the problem with ``` 8 <= c <= 12 ``` and ```k <= 100```
+2. How many initial parameters per easy, base, hard, medium?
+
+    | Difficulty | total populated IC (out of 16) | Number of blank columns*| Number of blank rows* |
+    |-|-|-|-|
+    | easy | 9 | 0 | 0 |
+    | base | 8 | 0 | 0 |
+    | medium | 7 | 1| 8|
+    | hard | 6 |1 | 1|
+
+* Note, not all cases in the difficulty category may have the same number of blank columns/rows. This should be considered the max amount of blank rows/columns per difficulty. For the hard problem, [hard, 1] did have 1 blank row AND column
+
+3. Avg K per problem type/k per problem type
+
+
+### k vs C
+
+[WIP]
+
+### 5x5, 9x9
 
 ## Costs:
+So far, utilizing text-davinci-003 I've run around 4 hours with a total cost of $19
