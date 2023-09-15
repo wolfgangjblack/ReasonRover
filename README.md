@@ -71,11 +71,11 @@ $, *, *, 1      4, *, *, 1      4, *, *, *      *, *, *, *      4, 3, 2, 1
 
 As to be expect, we see that the average number of interactions increases as we increase problem difficulty. Difficulty here is proxied by decreasing the number of initially populated cells. 
 
-![alt text](https://github.com/wolfgangjblack/ReasonRover/blob/tutorial/src/artifacts/avg_k.jpg)
+![alt text](https://github.com/wolfgangjblack/ReasonRover/blob/main/src/artifacts/avg_k.jpg)
 
 Similarly, we can also see that not all initial conditions are equal. While the difficulty rating indicated the number of initial populated parameters, they didn't share the same number of blank rows, columns, or populated indices. As such, the actual difficulty within a difficulty band could vary. We see that while it was a hard problem that required the highest number of interactions ([hard,base] required k = 85), the second highest k occured at medium base. 
 
-![alt text](https://github.com/wolfgangjblack/ReasonRover/blob/tutorial/src/artifacts/max_k.jpg)
+![alt text](https://github.com/wolfgangjblack/ReasonRover/blob/main/src/artifacts/max_k.jpg)
 
 ### k vs C
 
