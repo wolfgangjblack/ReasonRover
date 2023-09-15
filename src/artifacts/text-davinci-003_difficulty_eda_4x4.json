@@ -1,0 +1,107 @@
+{"medium_3_base_problem_4x4.txt": 
+        {"grid_size": "4x4", "children_thoughts": 8, 
+        "problem_description": "3,*,*,2|1,*,3,*|*,*,*,3|4,*,*,1\n\n            - This is a 4x4 Sudoku puzzle.\n            - The * represents a cell to be filled.\n            - The | character separates rows.\n            - At each step, replace one or more * with digits 1-4.\n            - There must be no duplicate digits in any row, column or 2x2 subgrid.\n            - Keep the known digits from previous valid thoughts in place.\n            - Each thought can be a partial or the final solution.", 
+        "initial_sudoku": "3,*,*,2|1,*,3,*|*,*,*,3|4,*,*,1",
+        "sudoku_solution": "3,4,1,2|1,2,3,4|2,1,4,3|4,3,2,1", "children": 8,
+        "final_solution": "3,4,1,2|1,2,3,4|2,1,4,3|4,3,2,1", "k": 30},
+
+ "base_problem_4x4.txt": 
+    {"grid_size": "4x4", 
+    "children_thoughts": 8, 
+    "problem_description": "3,*,*,2|1,*,3,*|*,1,*,3|4,*,*,1\n\n            - This is a 4x4 Sudoku puzzle.\n            - The * represents a cell to be filled.\n            - The | character separates rows.\n            - At each step, replace one or more * with digits 1-4.\n            - There must be no duplicate digits in any row, column or 2x2 subgrid.\n            - Keep the known digits from previous valid thoughts in place.\n            - Each thought can be a partial or the final solution.", 
+    "initial_sudoku": "3,*,*,2|1,*,3,*|*,1,*,3|4,*,*,1", 
+    "sudoku_solution": "3,4,1,2|1,2,3,4|2,1,4,3|4,3,2,1", 
+    "children": 8, 
+    "final_solution": "3,4,1,2|1,2,3,4|2,1,4,3|4,3,2,1", 
+    "k": 10},
+
+"easy_base_problem_4x4.txt": 
+    {"grid_size": "4x4", 
+    "children_thoughts": 8, 
+    "problem_description": "3,4,*,2|1,*,3,*|*,1,*,3|4,*,*,1\n\n            - This is a 4x4 Sudoku puzzle.\n            - The * represents a cell to be filled.\n            - The | character separates rows.\n            - At each step, replace one or more * with digits 1-4.\n            - There must be no duplicate digits in any row, column or 2x2 subgrid.\n            - Keep the known digits from previous valid thoughts in place.\n            - Each thought can be a partial or the final solution.", 
+    "initial_sudoku": "3,4,*,2|1,*,3,*|*,1,*,3|4,*,*,1", 
+    "sudoku_solution": "3,4,1,2|1,2,3,4|2,1,4,3|4,3,2,1", 
+    "children": 8, 
+    "final_solution": "3,4,1,2|1,2,3,4|2,1,4,3|4,3,2,1", 
+    "k": 5}, 
+
+"medium_2_base_problem_4x4.txt": 
+    {"grid_size": "4x4", 
+    "children_thoughts": 8, 
+    "problem_description": "3,*,*,2|1,*,3,*|*,1,*,*|4,*,*,1\n\n            - This is a 4x4 Sudoku puzzle.\n            - The * represents a cell to be filled.\n            - The | character separates rows.\n            - At each step, replace one or more * with digits 1-4.\n            - There must be no duplicate digits in any row, column or 2x2 subgrid.\n            - Keep the known digits from previous valid thoughts in place.\n            - Each thought can be a partial or the final solution.", 
+    "initial_sudoku": "3,*,*,2|1,*,3,*|*,1,*,*|4,*,*,1", 
+    "sudoku_solution": "3,4,1,2|1,2,3,4|2,1,4,3|4,3,2,1", 
+    "children": 8, 
+    "final_solution": "3,4,1,2|1,2,3,4|2,1,4,3|4,3,2,1", 
+    "k": 20}, 
+
+"hard_1_base_problem_4x4.txt": 
+    {"grid_size": "4x4", 
+    "children_thoughts": 12, 
+    "problem_description": "3,*,*,2|*,*,*,*|*,1,*,3|4,*,*,1\n\n            - This is a 4x4 Sudoku puzzle.\n            - The * represents a cell to be filled.\n            - The | character separates rows.\n            - At each step, replace one or more * with digits 1-4.\n            - There must be no duplicate digits in any row, column or 2x2 subgrid.\n            - Keep the known digits from previous valid thoughts in place.\n            - Each thought can be a partial or the final solution.", 
+    "initial_sudoku": "3,*,*,2|*,*,*,*|*,1,*,3|4,*,*,1", 
+    "sudoku_solution": "3,4,1,2|1,2,3,4|2,1,4,3|4,3,2,1", 
+    "children": 12, 
+    "final_solution": "3,4,1,2|1,2,3,4|2,1,4,3|4,3,2,1", 
+    "k": 10}, 
+
+"hard_2_base_problem_4x4.txt": 
+    {"grid_size": "4x4", 
+    "children_thoughts": 12, 
+    "problem_description": "3,*,*,*|1,*,3,*|*,1,*,*|4,*,*,1\n\n            - This is a 4x4 Sudoku puzzle.\n            - The * represents a cell to be filled.\n            - The | character separates rows.\n            - At each step, replace one or more * with digits 1-4.\n            - There must be no duplicate digits in any row, column or 2x2 subgrid.\n            - Keep the known digits from previous valid thoughts in place.\n            - Each thought can be a partial or the final solution.", 
+    "initial_sudoku": "3,*,*,*|1,*,3,*|*,1,*,*|4,*,*,1", 
+    "sudoku_solution": "3,4,1,2|1,2,3,4|2,1,4,3|4,3,2,1", 
+    "children": 12, 
+    "final_solution": "3,4,1,2|1,2,3,4|2,1,4,3|4,3,2,1", 
+    "k": 30}, 
+
+"medium_4_base_problem_4x4.txt": 
+    {"grid_size": "4x4", 
+    "children_thoughts": 8, 
+    "problem_description": "3,*,*,2|1,*,*,*|*,1,*,3|4,*,*,1\n\n            - This is a 4x4 Sudoku puzzle.\n            - The * represents a cell to be filled.\n            - The | character separates rows.\n            - At each step, replace one or more * with digits 1-4.\n            - There must be no duplicate digits in any row, column or 2x2 subgrid.\n            - Keep the known digits from previous valid thoughts in place.\n            - Each thought can be a partial or the final solution.", 
+    "initial_sudoku": "3,*,*,2|1,*,*,*|*,1,*,3|4,*,*,1", 
+    "sudoku_solution": "3,4,1,2|1,2,3,4|2,1,4,3|4,3,2,1", 
+    "children": 8, 
+    "final_solution": "3,4,1,2|1,2,3,4|2,1,4,3|4,3,2,1", 
+    "k": 15}, 
+
+"medium_base_problem_4x4.txt": 
+    {"grid_size": "4x4", 
+    "children_thoughts": 8, 
+    "problem_description": "3,*,*,2|1,*,3,*|*,1,*,3|4,*,*,*\n\n            - This is a 4x4 Sudoku puzzle.\n            - The * represents a cell to be filled.\n            - The | character separates rows.\n            - At each step, replace one or more * with digits 1-4.\n            - There must be no duplicate digits in any row, column or 2x2 subgrid.\n            - Keep the known digits from previous valid thoughts in place.\n            - Each thought can be a partial or the final solution.", 
+    "initial_sudoku": "3,*,*,2|1,*,3,*|*,1,*,3|4,*,*,*", 
+    "sudoku_solution": "3,4,1,2|1,2,3,4|2,1,4,3|4,3,2,1", 
+    "children": 8, 
+    "final_solution": "3,4,1,2|1,2,3,4|2,1,4,3|4,3,2,1", 
+    "k": 55}, 
+
+"hard_base_problem_4x4.txt": 
+    {"grid_size": "4x4", 
+    "children_thoughts": 12, 
+    "problem_description": "3,*,*,2|1,*,3,*|*,1,*,3|*,*,*,*\n\n            - This is a 4x4 Sudoku puzzle.\n            - The * represents a cell to be filled.\n            - The | character separates rows.\n            - At each step, replace one or more * with digits 1-4.\n            - There must be no duplicate digits in any row, column or 2x2 subgrid.\n            - Keep the known digits from previous valid thoughts in place.\n            - Each thought can be a partial or the final solution.", 
+    "initial_sudoku": "3,*,*,2|1,*,3,*|*,1,*,3|*,*,*,*", 
+    "sudoku_solution": "3,4,1,2|1,2,3,4|2,1,4,3|4,3,2,1", 
+    "children": 12, 
+    "final_solution": "3,4,1,2|1,2,3,4|2,1,4,3|4,3,2,1", 
+    "k": 90},
+
+"hard_3_base_problem_4x4.txt": 
+    {"grid_size": "4x4", 
+    "children_thoughts": 12, 
+    "problem_description": "3,*,*,2|1,*,3,*|*,1,*,3|*,*,*,*\n\n            - This is a 4x4 Sudoku puzzle.\n            - The * represents a cell to be filled.\n            - The | character separates rows.\n            - At each step, replace one or more * with digits 1-4.\n            - There must be no duplicate digits in any row, column or 2x2 subgrid.\n            - Keep the known digits from previous valid thoughts in place.\n            - Each thought can be a partial or the final solution.", 
+    "initial_sudoku": "3,*,*,2|1,*,3,*|*,1,*,3|*,*,*,*", 
+    "sudoku_solution": "3,4,1,2|1,2,3,4|2,1,4,3|4,3,2,1", 
+    "children": 12, 
+    "final_solution": "3,4,1,2|1,2,3,4|2,1,4,3|4,3,2,1", 
+    "k": 35}, 
+
+"medium_5_base_problem_4x4.txt": 
+    {"grid_size": "4x4", 
+    "children_thoughts": 8, 
+    "problem_description": "3,*,*,*|1,*,3,*|*,1,*,3|4,*,*,1\n\n            - This is a 4x4 Sudoku puzzle.\n            - The * represents a cell to be filled.\n            - The | character separates rows.\n            - At each step, replace one or more * with digits 1-4.\n            - There must be no duplicate digits in any row, column or 2x2 subgrid.\n            - Keep the known digits from previous valid thoughts in place.\n            - Each thought can be a partial or the final solution.", 
+    "initial_sudoku": "3,*,*,*|1,*,3,*|*,1,*,3|4,*,*,1", 
+    "sudoku_solution": "3,4,1,2|1,2,3,4|2,1,4,3|4,3,2,1", 
+    "children": 8, 
+    "final_solution": "3,4,1,2|1,2,3,4|2,1,4,3|4,3,2,1", 
+    "k": 25}
+}
