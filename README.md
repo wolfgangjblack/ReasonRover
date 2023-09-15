@@ -10,18 +10,19 @@ increasing the grid size of the problems and the difficulty of the problems foun
 
 ## Parameters of Exploration
 ### Tuneable parameters:
-<b>k:</b> the maximum number of interactions -This will range from 5-50 per given problem with an break condition on a successful solution
-<b>c:</b> the maximum number of child thoughts - this will be a function of grid size
-<b>modeltype:</b> Here we'll use both text-davinci-003 and ChatGPT-3.5-turbo
+<b>k:</b> the maximum number of interactions -This will range from 5-50 per given problem with an break condition on a successful solution <br>
+<b>c:</b> the maximum number of child thoughts - this will be a function of grid size<br>
+<b>modeltype:</b> Here we'll use text-davinci-003 
 
 ### Problem Parameters:
-The majority of the sudoku problems and their solutions have been sourced from http://www.sudoku-download.net
-<b>difficulty:</b> base, easy, medium, hard, expert - base is a problem gathered from the paper, the rest indicate increasing difficulty. Difficulty is a function of how many spaces are revealed at the start of the problem and how if a specific technique is required to be used to arrive at the solution (brick, ladder, ect)
+The majority of the sudoku problems and their solutions have been sourced from http://www.sudoku-download.net <br>
+<b>difficulty:</b> base, easy, medium, hard, expert - base is a problem gathered from the paper, the rest indicate increasing difficulty. Difficulty is a function of how many spaces are revealed at the start of the problem and how if a specific technique is required to be used to arrive at the solution (brick, ladder, ect) <br>
 <b>grid size:</b> #x# - the grid sizes explored in this problem range from 4x4 - 9x9, with increasing sizes yielding increasing difficulty. 
 
 ## Dependencies
 
-## Usage
+## Usage 
+Note: This is a [WIP] and main.py does not yet exist. 
 To run this code:
 1. first in the terminal and root directory, install the requirements by ```pip install -r requirements.txt```
 2. step into ```./scr```
@@ -45,8 +46,11 @@ The ToT method, implemented with MyChecker() class was able to solve this with k
 
 Example Initial Conditions
 ```
-easy        base        medium        hard
-
+easy            base            medium          hard            Solution 
+3, 4, *, 2,     3, *, *, 2      3, *, *, 2      3, *, *, 2      3, 4, 1, 2
+1, *, 3, *      1, *, 3, *      1, *, 3, *      1, *, 3, *      1, 2, 3, 4
+*, 1, *, 3      *, 1, *, 3      *, 1, *, 3      *, 1, *, 3      2, 1, 4, 3
+$, *, *, 1      4, *, *, 1      4, *, *, *      *, *, *, *      4, 3, 2, 1
 
 ```
 #### Results
