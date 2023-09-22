@@ -1,4 +1,4 @@
-# ReasonRover
+# SudokuTree
 Utilize Tree-of-thought to explore complex problem solving in Large Language Models:
 
 Data Modified: 9/14/23
