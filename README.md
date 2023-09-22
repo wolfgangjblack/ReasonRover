@@ -81,6 +81,16 @@ Similarly, we can also see that not all initial conditions are equal. While the 
 
 From the paper, LLM Guided Tree-of-Thought, we see that the model starts to perform poorly at puzzles larger than 4x4. I suspect this is partially because of the increased difficulty of the parameters and the blank spaces. For example, if we have 8 blank spaces in a 4x4 we have a total of 4**8 of a permutation with repitition of ~66k. If we increase the grid (and therefore possible ints) from 4 to 5, we now have a permutation of 5**8 or 390k. While this is an order of magnitutde greater in the problem space, the paper shows a decrease of 10% is the models ability to solve the 5x5 grid. An interesting observation, from the [GitHub](https://github.com/jieyilong/tree-of-thought-puzzle-solver) associated with LLM Guided Tree-of-Thought we see that the 4x4 problem had 12 blanks, and the 5x5 problem had 11 - this gives us brute force permutations on the order of 1e8 (with 5**11 ~ 3x 4**12). If we assume this scale as a proxy of difficulty we can roughly estimate that to be solvable with the initial parameter used in the paper (k = 20, c = 8) then to solve a 9x9 we can only have 8 blank parameters. While this isn't necessarily a linear scaling (or the best substiture for difficulty) we'll explore 5x5 with 3 different initial configurations of 11 blank spaces, and then 9x9 with 6 different configurations. The first 3 configurations will all have 8 blanks, the second 3 will have 10, 15, 20. For the equivalent permutation space (11 blanks at 5x5 and 8 blanks at 9x9) we'll allow $k_{max} == 40$ and $c = 12$. For the increasing blank spaces in the 9x9 we'll allow $40 \leq k_{max} \leq 100$ and $c = 12$. 
 
+#### Results:
+Unlike the results found in the article, we were unable to solve any of the 5x5 or 9x9 puzzles we presented to the tree-of-thought agent. Its important to note that we considered one puzzle with many different initial conditions, and considered the initial blank count as the difficulty this isn't a real measurement of difficulty in sudoku. We did use a puzzle the journal paper git repo used and was able to solve, but fixed the children at 12 and k = 40. With additional testing we're confident we could solve the 5x5 at least. However, the project is costly and as such we'll end here. The main takeaway is that while this method DOES improve the problem solving abilities of an LLM it also comes with its challenges. 
+
+
+### TLDR:
+
+1. This repo expored [Tree-of-Thought](https://arxiv.org/pdf/2305.08291.pdf) method to solve sudoku puzzle
+2. Good results were found for a 3x3, however results were not as conclusive for 5x5, 9x9
+3. While this method does show some promise for helping an LLM reason, the final solution MUST be known and the method does not generalize well even on problems of the same type. 
+4. Tree-of-Thought may work better with a specialist model over a generalist model 
 
 #### Notes:
 
@@ -88,5 +98,6 @@ From the paper, LLM Guided Tree-of-Thought, we see that the model starts to perf
 Originally I wanted to explore total thoughts (k) vs C (number of children). But what I'm finding from the library is that as we increase depth (step down further into children nodes) we consume thoughts. Therefor, we already know theoretical upper limit of thoughts/children. We know that the max number of children is equal to the number of blank spaces in the puzzle and the number of unique thoughts is the possible integers raised to the blank spaces. 
 
 For example, if we have a 9x9 puzzle with 25 spaces to fill that can be anything from 1-9 we could say there are a total of 9**25 unique thoughts. It should be noted that this is a max for a brute search and neglects any rules about what numbers go where.  Instead of exploring k vs c then, we'll explore the idea of this increasing permutation space based on grid size and initial conditions.
+
 ## Costs:
-So far, utilizing text-davinci-003 I've run around 4 hours with a total cost of $19
+So far, utilizing text-davinci-003 I've run around 6 hours with a total cost of ~$25
